@@ -612,41 +612,18 @@ if args.benchmark == 'mvbench':
             with torch.no_grad():
                 image_emb = vision_tower(video) # torch.Size([64, 729, 1152])
             if args.attack_method == 'pgd':
-                if data_idx>=2575:
-                    adv_videos = pgd_attack(video, image_emb)
-                else:
-                    data_idx = data_idx + 1
-                    continue
+                adv_videos = pgd_attack(video, image_emb)
+                data_idx = data_idx + 1
             elif args.attack_method == 'mifgsm':
-                if data_idx>=args.data_idx:
-                    adv_videos = mifgsm_attack(video, image_emb)
-                else:
-                    data_idx += 1
-                    continue
+                adv_videos = mifgsm_attack(video, image_emb)
             elif args.attack_method == 'difgsm':
-                if data_idx >=2536:
-                    adv_videos = difgsm_attack(video, image_emb)
-                else: 
-                    data_idx+=1
-                    continue
+                adv_videos = difgsm_attack(video, image_emb)
             elif args.attack_method == 'tifgsm':
-                if data_idx >=3546:
-                    adv_videos = tifgsm_attack(video, image_emb)
-                else:
-                    data_idx += 1
-                    continue
+                adv_videos = tifgsm_attack(video, image_emb)
             elif args.attack_method == 'sim':
-                if data_idx >=2039:
-                    adv_videos = sim_attack(video, image_emb)
-                else: 
-                    data_idx+=1
-                    continue
+                adv_videos = sim_attack(video, image_emb)
             elif args.attack_method == 'bsr':
-                if data_idx >=2024:
-                    adv_videos = bsr_attack(video, image_emb)
-                else:
-                    data_idx += 1
-                    continue
+                adv_videos = bsr_attack(video, image_emb)
             del image_emb, video
             save_dir = os.path.join(args.output_dir, f"adv_{args.loss}_{args.eps}_{args.iterations_adv}_{args.attack_method}_bicon{args.bicos}{args.single}_flow{args.flow}_llava-next_{args.benchmark}/task_{item['task_type']}")
             if not os.path.exists(save_dir):
