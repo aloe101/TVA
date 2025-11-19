@@ -566,10 +566,10 @@ if args.benchmark == 'mvbench':
         "Moving Count": ("moving_count.json", "/projects/hui007/MLLM/benchmarks/mvbench/video/clevrer/video_validation/", "decord", False),
         "Moving Attribute": ("moving_attribute.json", "/projects/hui007/MLLM/benchmarks/mvbench/video/clevrer/video_validation/", "decord", False),
         "State Change": ("state_change.json", "/projects/hui007/MLLM/benchmarks/mvbench/video/perception/videos/", "decord", False),
-        # "Fine-grained Pose": ("fine_grained_pose.json", "/home/Dataset/Action/NTURGBD120/nturgb+d_rgb/", "decord", False),
+        "Fine-grained Pose": ("fine_grained_pose.json", "/projects/hui007/MLLM/benchmarks/mvbench/NTURGBD120/nturgb+d_rgb/", "decord", False),
         "Character Order": ("character_order.json", "/projects/hui007/MLLM/benchmarks/mvbench/video/perception/videos/", "decord", False),
         "Egocentric Navigation": ("egocentric_navigation.json", "/projects/hui007/MLLM/benchmarks/mvbench/video/vlnqa/", "decord", False),
-        # "Episodic Reasoning": ("episodic_reasoning.json", "/projects/hui007/MLLM/benchmarks/mvbench/video/tvqa/frames_fps3_hq/", "frame", True),  # has start & end, read frame
+        "Episodic Reasoning": ("episodic_reasoning.json", "/projects/hui007/MLLM/benchmarks/mvbench/video/tvqa/frames_fps3_hq/", "frame", True),  # has start & end, read frame
         "Counterfactual Inference": ("counterfactual_inference.json", "/projects/hui007/MLLM/benchmarks/mvbench/video/clevrer/video_validation/", "decord", False),
     }
 
